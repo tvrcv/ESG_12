@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000033;
+    /* Even darker blue */
+    color: white;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 66, 0.5);
+    /* A translucent mid-blue background for the container */
+    border-radius: 5px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.alert {
+    color: red;
+    text-align: center;
+}
+
+.results {
+    margin-top: 30px;
+}
+
+input[type="submit"] {
+    display: block;
+    margin: 20px 0;
+    padding: 10px 20px;
+    background-color: #44aaff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #3388cc;
+}

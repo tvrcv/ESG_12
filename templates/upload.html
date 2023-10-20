@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESG Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>ESG Word Counter</h1>
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div class="alert">
+            {{ messages[0] }}
+        </div>
+        {% endif %}
+        {% endwith %}
+
+        <form action="/" method="post" enctype="multipart/form-data">
+            <input type="file" name="file">
+            <input type="submit" value="Analyze">
+        </form>
+
+        {% if scores %}
+        <div class="results">
+            <h2>Analysis Results:</h2>
+            <p><strong>E:</strong> {{ scores['E'] }}</p>
+            <p><strong>S:</strong> {{ scores['S'] }}</p>
+            <p><strong>G:</strong> {{ scores['G'] }}</p>
+            <img src="{{ url_for('static', filename='plot.png') }}" alt="Analysis Results">
+        </div>
+        {% endif %}
+    </div>
+</body>
+
+</html>
